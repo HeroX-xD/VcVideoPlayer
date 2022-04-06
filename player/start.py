@@ -5,7 +5,7 @@ from plugins.tr import *
 from plugins.tr import TGPK_TEXT, VSONG_TEXT, PASTE_TEXT, INFO_TEXT, STREAM_TEXT, START_TEXT, HELP_TEXT
 from pyrogram.errors import MessageNotModified
 
-@Client.on_message(filters.command("start"))
+@Client.on_message(filters.command("mhelp"))
 async def start(client, message):
    buttons = [
             [
@@ -16,7 +16,7 @@ async def start(client, message):
                 InlineKeyboardButton("Cʜᴀɴɴᴇʟ 📢", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
-                InlineKeyboardButton("🤖 Bᴏᴛ Lɪꜱᴛ", url=f"https://t.me/BotDuniya/146"),
+                InlineKeyboardButton("🤖 owner", url=f"https://t.me/proxpro"),
                 InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ 👥", url=f"https://t.me/{SUPPORT_GROUP}"),
             ],
             [
@@ -26,7 +26,7 @@ async def start(client, message):
    reply_markup = InlineKeyboardMarkup(buttons)
    if message.chat.type == 'private':
       m=await message.reply_photo(
-                                  photo="https://telegra.ph/file/1ca2830c014aa6b8b62e7.jpg", 
+                                  photo="https://telegra.ph/file/46573977ee10dc205da77.jpg", 
                                   caption=START_TEXT.format(message.from_user.first_name, message.from_user.id),
                                   reply_markup=reply_markup
       )      
@@ -143,7 +143,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data=="start":
+    elif query.data=="mhelp":
         buttons = [
             [
                 InlineKeyboardButton("❔ Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ❔", callback_data="help"),
@@ -153,7 +153,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("Cʜᴀɴɴᴇʟ 📢", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
-                InlineKeyboardButton("🤖 Bᴏᴛ Lɪꜱᴛ", url=f"https://t.me/BotDuniya/146"),
+                InlineKeyboardButton("🤖 owner", url=f"https://t.me/proxpro"),
                 InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ 👥", url=f"https://t.me/{SUPPORT_GROUP}"),
             ],
             [
